@@ -1,0 +1,6 @@
+[submodule "utilities/bling"]
+	path = utilities/bling
+	url = git@github.com:BlingCorp/bling.git
+[submodule "utilities/layout-machi"]
+	path = utilities/layout-machi
+	url = git@github.com:xinhaoyuan/layout-machi.git
