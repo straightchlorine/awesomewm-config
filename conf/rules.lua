@@ -33,6 +33,7 @@ ruled.client.connect_signal("request::rules", function()
         	class = {
         		"Lxappearance",
         		"Nm-connection-editor",
+            "Pavucontrol",
         	},
         	name = {
         		"Event Tester", -- xev
