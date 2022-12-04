@@ -12,7 +12,7 @@ run () {
 setxkbmap pl
 
 # picom
-run picom --experimental-backends
+run picom &
 
 # nitrogen
 run nitrogen --restore
