@@ -54,6 +54,15 @@ awful.keyboard.append_global_keybindings({
 		awful.spawn.with_shell(apps.defaults.notes)
 	end, { description = "notes", group = "applications" }),
 
+	awful.key({ mod, shift }, "d", function()
+      awful.spawn('dfhack', {
+        screen = 1,
+        tag = "1" })
+      awful.spawn('dwarftherapist', {
+        screen = 1,
+        tag = "2"
+      })
+  end, { description = "dwarf fortress", group = "applications" }),
 })
 
 --- client management
