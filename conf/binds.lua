@@ -56,13 +56,17 @@ awful.keyboard.append_global_keybindings({
 
 	awful.key({ mod, shift }, "d", function()
       awful.spawn('dfhack', {
-        screen = 1,
-        tag = "1" })
+        tag = screen[1].tags[1]
+      })
       awful.spawn('dwarftherapist', {
-        screen = 1,
-        tag = "2"
+        tag = screen[1].tags[2]
       })
   end, { description = "dwarf fortress", group = "applications" }),
+
+  awful.key({mod, shift}, "s", function()
+    awful.spawn('maim -s -u | xclip -selection clipboard -t image/png -i')
+  end,
+  {description = "selection screen shot to clipboard", group = "convenience"})
 })
 
 --- client management
