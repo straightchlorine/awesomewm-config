@@ -62,11 +62,6 @@ awful.keyboard.append_global_keybindings({
         tag = screen[1].tags[2]
       })
   end, { description = "dwarf fortress", group = "applications" }),
-
-  awful.key({mod, shift}, "s", function()
-    awful.spawn('maim -s -u | xclip -selection clipboard -t image/png -i')
-  end,
-  {description = "selection screen shot to clipboard", group = "convenience"})
 })
 
 --- client management
