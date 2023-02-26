@@ -28,5 +28,4 @@ tag.connect_signal("request::default_layouts", function()
         centered,
         machi.default_layout
     })
-
 end)

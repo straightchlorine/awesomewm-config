@@ -36,4 +36,3 @@ end)
 
 --bling flash focus
 bling.module.flash_focus.enable()
-

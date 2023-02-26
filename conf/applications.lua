@@ -17,7 +17,7 @@ return {
     terminal_ide = "nvim",
     -- browser
     browser = "firefox",
-    -- browser playlist
+    -- quick access to the playlist
     playlist = "firefox --new-window 'https://www.youtube.com/playlist?list=PL5zuf4CtvOaS51k6gZdbaSPEyB6utebSw'",
   }
 }

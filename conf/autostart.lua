@@ -9,7 +9,7 @@ local function autostart ()
     naughty.connect_signal("request::display_error", function(message, startup)
         naughty.notification {
             urgency = "critical",
-            title = "you fucking donkey" .. (startup and " during startup, donkey" or " somewhere, donkey"),
+            title = "donkey." .. (startup and "error during startup, donkey" or "error somewhere, donkey"),
             message = message,
         }
     end)
