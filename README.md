@@ -1,2 +1,0 @@
-# awesomewm-config
-awesomewm config
