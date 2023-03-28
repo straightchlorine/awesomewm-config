@@ -87,7 +87,6 @@ awful.keyboard.append_global_keybindings({
 
 })
 
--- hardware/general software utility
 awful.keyboard.append_global_keybindings({
 
   awful.key(
@@ -142,6 +141,16 @@ awful.keyboard.append_global_keybindings({
 
   awful.key(
     {},
+    'XF86AudioMicMute',
+    function()
+      awful.spawn('amixer set Capture toggle', false)
+      -- add widgets here
+    end,
+    { description = 'mute microphone', group = 'hardware/capture' }
+  ),
+
+  awful.key(
+    {},
     'XF86AudioPlay',
     function()
       -- playerctl_daemon:play_pause()
@@ -169,5 +178,11 @@ awful.keyboard.append_global_keybindings({
     end,
     { description = 'next', group = 'music' }
   ),
+
+})
+
+awful.keyboard.append_global_keybindings({
+
+  
 
 })
