@@ -1,6 +1,9 @@
 local awful = require('awful')
 local hotkeys_popup = require('awful.hotkeys_popup').widget
 
+require('awful.hotkeys_popup.keys')
+require('awful.autofocus')
+
 local mod = 'Mod4' -- windows key
 local alt = 'Mod1'
 
@@ -183,6 +186,102 @@ awful.keyboard.append_global_keybindings({
 
 awful.keyboard.append_global_keybindings({
 
-  
+  awful.key(
+    { mod },
+    'q',
+    function(c)
+      c:kill()
+    end,
+    { description = 'close client', group = 'client'}
+  ),
+
+  awful.key(
+    { mod },
+    'q',
+    function(c)
+      c:kill()
+    end,
+    { description = 'close client', group = 'client'}
+  ),
+
+  awful.key(
+    { mod },
+    'k',
+    function()
+      awful.client.focus.bydirection('up')
+      --bling.module.flash_focus.flashfocus(client.focus)
+    end,
+    { description = 'focus on the client above', group = 'client' }
+  ),
+
+  awful.key(
+    { mod },
+    'Up',
+    function()
+      awful.client.focus.bydirection('up')
+      --bling.module.flash_focus.flashfocus(client.focus)
+    end,
+    { description = 'focus on the client above', group = 'client' }
+  ),
+
+  awful.key(
+    { mod },
+    'j',
+    function()
+      awful.client.focus.bydirection('down')
+      --bling.module.flash_focus.flashfocus(client.focus)
+    end,
+    { description = 'focus on the client below', group = 'client' }
+  ),
+
+  awful.key(
+    { mod },
+    'Down',
+    function()
+      awful.client.focus.bydirection('down')
+      --bling.module.flash_focus.flashfocus(client.focus)
+    end,
+    { description = 'focus on the client below', group = 'client' }
+  ),
+
+  awful.key(
+    { mod },
+    'h',
+    function()
+      awful.client.focus.bydirection('left')
+      --bling.module.flash_focus.flashfocus(client.focus)
+    end,
+    { description = 'focus on the client to the left', group = 'client' }
+  ),
+
+  awful.key(
+    { mod },
+    'Left',
+    function()
+      awful.client.focus.bydirection('left')
+      --bling.module.flash_focus.flashfocus(client.focus)
+    end,
+    { description = 'focus on the client to the left', group = 'client' }
+  ),
+
+  awful.key(
+    { mod },
+    'l',
+    function()
+      awful.client.focus.bydirection('right')
+      --bling.module.flash_focus.flashfocus(client.focus)
+    end,
+    { description = 'focus on the client to the right', group = 'client' }
+  ),
+
+  awful.key(
+    { mod },
+    'Right',
+    function()
+      awful.client.focus.bydirection('right')
+      --bling.module.flash_focus.flashfocus(client.focus)
+    end,
+    { description = 'focus on the client to the right', group = 'client' }
+  ),
 
 })
