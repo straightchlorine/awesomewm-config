@@ -1,4 +1,6 @@
 local awful = require('awful')
+local bling = require('utilities.bling')
+
 local hotkeys_popup = require('awful.hotkeys_popup').widget
 
 require('awful.hotkeys_popup.keys')
@@ -197,19 +199,10 @@ awful.keyboard.append_global_keybindings({
 
   awful.key(
     { mod },
-    'q',
-    function(c)
-      c:kill()
-    end,
-    { description = 'close client', group = 'client'}
-  ),
-
-  awful.key(
-    { mod },
     'k',
     function()
       awful.client.focus.bydirection('up')
-      --bling.module.flash_focus.flashfocus(client.focus)
+      bling.module.flash_focus.flashfocus(client.focus)
     end,
     { description = 'focus on the client above', group = 'client' }
   ),
@@ -219,7 +212,7 @@ awful.keyboard.append_global_keybindings({
     'Up',
     function()
       awful.client.focus.bydirection('up')
-      --bling.module.flash_focus.flashfocus(client.focus)
+      bling.module.flash_focus.flashfocus(client.focus)
     end,
     { description = 'focus on the client above', group = 'client' }
   ),
@@ -229,7 +222,7 @@ awful.keyboard.append_global_keybindings({
     'j',
     function()
       awful.client.focus.bydirection('down')
-      --bling.module.flash_focus.flashfocus(client.focus)
+      bling.module.flash_focus.flashfocus(client.focus)
     end,
     { description = 'focus on the client below', group = 'client' }
   ),
@@ -239,7 +232,7 @@ awful.keyboard.append_global_keybindings({
     'Down',
     function()
       awful.client.focus.bydirection('down')
-      --bling.module.flash_focus.flashfocus(client.focus)
+      bling.module.flash_focus.flashfocus(client.focus)
     end,
     { description = 'focus on the client below', group = 'client' }
   ),
@@ -249,7 +242,7 @@ awful.keyboard.append_global_keybindings({
     'h',
     function()
       awful.client.focus.bydirection('left')
-      --bling.module.flash_focus.flashfocus(client.focus)
+      bling.module.flash_focus.flashfocus(client.focus)
     end,
     { description = 'focus on the client to the left', group = 'client' }
   ),
@@ -259,7 +252,7 @@ awful.keyboard.append_global_keybindings({
     'Left',
     function()
       awful.client.focus.bydirection('left')
-      --bling.module.flash_focus.flashfocus(client.focus)
+      bling.module.flash_focus.flashfocus(client.focus)
     end,
     { description = 'focus on the client to the left', group = 'client' }
   ),
@@ -269,7 +262,7 @@ awful.keyboard.append_global_keybindings({
     'l',
     function()
       awful.client.focus.bydirection('right')
-      --bling.module.flash_focus.flashfocus(client.focus)
+      bling.module.flash_focus.flashfocus(client.focus)
     end,
     { description = 'focus on the client to the right', group = 'client' }
   ),
@@ -279,9 +272,82 @@ awful.keyboard.append_global_keybindings({
     'Right',
     function()
       awful.client.focus.bydirection('right')
-      --bling.module.flash_focus.flashfocus(client.focus)
+      bling.module.flash_focus.flashfocus(client.focus)
     end,
     { description = 'focus on the client to the right', group = 'client' }
+  ),
+
+
+  awful.key(
+    { mod, 'Shift' },
+    'l',
+    function()
+      awful.client.swap.bydirection('right')
+    end,
+    { description = 'swap with the client to the right', group = 'client' }
+  ),
+
+  awful.key(
+    { mod, 'Shift' },
+    'Right',
+    function()
+      awful.client.swap.bydirection('right')
+    end,
+    { description = 'swap with the client to the right', group = 'client' }
+  ),
+
+  awful.key(
+    { mod, 'Shift' },
+    'h',
+    function()
+      awful.client.swap.bydirection('left')
+    end,
+    { description = 'swap with the client to the left', group = 'client' }
+  ),
+
+  awful.key(
+    { mod, 'Shift' },
+    'Left',
+    function()
+      awful.client.swap.bydirection('left')
+    end,
+    { description = 'swap with the client to the left', group = 'client' }
+  ),
+
+  awful.key(
+    { mod, 'Shift' },
+    'k',
+    function()
+      awful.client.swap.bydirection('up')
+    end,
+    { description = 'swap with the client above', group = 'client' }
+  ),
+
+  awful.key(
+    { mod, 'Shift' },
+    'Up',
+    function()
+      awful.client.swap.bydirection('up')
+    end,
+    { description = 'swap with the client above', group = 'client' }
+  ),
+
+  awful.key(
+    { mod, 'Shift'},
+    'j',
+    function()
+      awful.client.swap.bydirection('down')
+    end,
+    { description = 'swap with the client below', group = 'client' }
+  ),
+
+  awful.key(
+    { mod, 'Shift'},
+    'Down',
+    function()
+      awful.client.focus.bydirection('down')
+    end,
+    { description = 'swap with the client below', group = 'client' }
   ),
 
 })
