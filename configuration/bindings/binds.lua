@@ -278,78 +278,167 @@ awful.keyboard.append_global_keybindings({
     end,
     { description = 'focus on the client to the right', group = 'client' }
   ),
-
-
-  awful.key(
-    { mod, 'Shift' },
-    'l',
-    function()
-      awful.client.swap.bydirection('right')
-    end,
-    { description = 'swap with the client to the right', group = 'client' }
-  ),
-
-  awful.key(
-    { mod, 'Shift' },
-    'Right',
-    function()
-      awful.client.swap.bydirection('right')
-    end,
-    { description = 'swap with the client to the right', group = 'client' }
-  ),
-
-  awful.key(
-    { mod, 'Shift' },
-    'h',
-    function()
-      awful.client.swap.bydirection('left')
-    end,
-    { description = 'swap with the client to the left', group = 'client' }
-  ),
-
-  awful.key(
-    { mod, 'Shift' },
-    'Left',
-    function()
-      awful.client.swap.bydirection('left')
-    end,
-    { description = 'swap with the client to the left', group = 'client' }
-  ),
-
-  awful.key(
-    { mod, 'Shift' },
-    'k',
-    function()
-      awful.client.swap.bydirection('up')
-    end,
-    { description = 'swap with the client above', group = 'client' }
-  ),
-
-  awful.key(
-    { mod, 'Shift' },
-    'Up',
-    function()
-      awful.client.swap.bydirection('up')
-    end,
-    { description = 'swap with the client above', group = 'client' }
-  ),
-
-  awful.key(
-    { mod, 'Shift'},
-    'j',
-    function()
-      awful.client.swap.bydirection('down')
-    end,
-    { description = 'swap with the client below', group = 'client' }
-  ),
-
-  awful.key(
-    { mod, 'Shift'},
-    'Down',
-    function()
-      awful.client.focus.bydirection('down')
-    end,
-    { description = 'swap with the client below', group = 'client' }
-  ),
-
 })
+
+client.connect_signal('request::default_keybindings', 
+  function()
+    awful.keyboard.default_keybindings({
+
+      awful.key(
+        { mod, 'Shift' },
+        'l',
+        function(c)
+          awful.client.swap.bydirection('right', c, nil)
+        end,
+        { description = 'swap with the client to the right', group = 'client' }
+      ),
+
+      awful.key(
+        { mod, 'Shift' },
+        'Right',
+        function(c)
+          awful.client.swap.bydirection('right', c, nil)
+        end,
+        { description = 'swap with the client to the right', group = 'client' }
+      ),
+
+      awful.key(
+        { mod, 'Shift' },
+        'h',
+        function(c)
+          awful.client.swap.bydirection('left', c, nil)
+        end,
+        { description = 'swap with the client to the left', group = 'client' }
+      ),
+
+      awful.key(
+        { mod, 'Shift' },
+        'Left',
+        function(c)
+          awful.client.swap.bydirection('left', c, nil)
+        end,
+        { description = 'swap with the client to the left', group = 'client' }
+      ),
+
+      awful.key(
+        { mod, 'Shift' },
+        'k',
+        function(c)
+          awful.client.swap.bydirection('up', c, nil)
+        end,
+        { description = 'swap with the client above', group = 'client' }
+      ),
+
+      awful.key(
+        { mod, 'Shift' },
+        'Up',
+        function(c)
+          awful.client.swap.bydirection('up', c, nil)
+        end,
+        { description = 'swap with the client above', group = 'client' }
+      ),
+
+      awful.key(
+        { mod, 'Shift'},
+        'j',
+        function(c)
+          awful.client.swap.bydirection('down', c, nil)
+        end,
+        { description = 'swap with the client below', group = 'client' }
+      ),
+
+      awful.key(
+        { mod, 'Shift'},
+        'Down',
+        function(c)
+          awful.client.focus.bydirection('down', c, nil)
+        end,
+        { description = 'swap with the client below', group = 'client' }
+      ),
+
+      awful.key(
+        { mod },
+        'f',
+        function (c)
+          c.fullscreen = not c.fullscreen
+          c:raise()
+        end,
+        { description = 'toggle fullscreen', group = 'client' }
+      ),
+
+      awful.key(
+        { mod, 'Control' },
+        'space',
+        awful.client.floating.toggle,
+        { description = 'toggle floating', group = 'client' }
+      ),
+
+      awful.key(
+        { mod, 'Control' },
+        'Return',
+        function (c)
+          c:swap(awful.client.getmaster())
+        end,
+        { description = 'move to master', group = 'client' }
+      ),
+
+      awful.key({ mod },
+        'o',
+        function (c)
+          c:move_to_screen()
+        end,
+        { description = 'move to screen', group = 'client' }
+      ),
+
+      awful.key(
+        { mod },
+        't',
+        function (c)
+          c.ontop = not c.ontop
+        end,
+        { description = 'toggle keep on top', group = 'client' }
+      ),
+
+      awful.key(
+        { mod },
+        'n',
+        function (c)
+          c.minimized = true
+        end ,
+        { description = 'minimize', group = 'client' }
+      ),
+
+      awful.key(
+        { mod },
+        'm',
+        function (c)
+          c.maximized = not c.maximized
+          c:raise()
+        end ,
+        { description = '(un)maximize', group = 'client' }
+      ),
+
+      awful.key(
+        { mod, 'Control' },
+        'm',
+        function (c)
+          c.maximized_vertical = not c.maximized_vertical
+          c:raise()
+        end ,
+        { description = '(un)maximize vertically', group = 'client' }
+      ),
+
+      awful.key(
+        { mod, 'Shift'   },
+        'm',
+        function (c)
+          c.maximized_horizontal = not c.maximized_horizontal
+          c:raise()
+        end ,
+        { description = '(un)maximize horizontally', group = 'client' }
+      ),
+
+    })
+  end
+)
+
