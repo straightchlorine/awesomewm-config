@@ -1,7 +1,9 @@
 local awful = require('awful')
-local bling = require('utilities.bling')
 
 local hotkeys_popup = require('awful.hotkeys_popup').widget
+
+local bling = require('utilities.bling')
+local pctl = require('signal.playerctl')
 
 require('awful.hotkeys_popup.keys')
 require('awful.autofocus')
@@ -158,7 +160,7 @@ awful.keyboard.append_global_keybindings({
     {},
     'XF86AudioPlay',
     function()
-      -- playerctl_daemon:play_pause()
+      pctl:play_pause()
       -- add widgets here
     end,
     { description = 'play and pause', group = 'music' }
@@ -168,7 +170,7 @@ awful.keyboard.append_global_keybindings({
     {},
     'XF86AudioPrev',
     function()
-      -- playerctl_daemon:previous()
+      pctl:previous()
       -- add widgets here
     end,
     { description = 'previous', group = 'music' }
@@ -178,7 +180,7 @@ awful.keyboard.append_global_keybindings({
     {},
     'XF86AudioNext',
     function()
-      -- playerctl_daemon:next()
+      pctl:next()
       -- add widgets here
     end,
     { description = 'next', group = 'music' }
