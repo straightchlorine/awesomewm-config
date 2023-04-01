@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+
+alacritty -e nvim ./configuration/bindings/binds.lua &
+alacritty -e nvim ../../test-config/dotfiles/config/awesome/config/key.lua -c ':cd ~/test-config/dotfiles/' &
+alacritty -e nvim ../../test-config/the-glorious-dotfiles/config/awesome/floppy/configuration/keys/global.lua -c ':cd ~/test-config/the-glorious-dotfiles/' &
