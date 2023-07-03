@@ -25,9 +25,9 @@ screens=$(xrandr -q | grep -w "connected" | wc -l)
 if [[ $screens -gt 1 ]]
 then
   # starting eww widgets (two screens)
-  $HOME/.local/eww/target/release/eww -c $HOME/.config/eww/bars/main open-many main-wspaces clock-date weather sysinfo &&
-  $HOME/.local/eww/target/release/eww -c $HOME/.config/eww/bars/secondary open-many auxiliary-wspaces clock-date
+  $HOME/.local/wm/eww/target/release/eww -c $HOME/.config/eww/bars/main open-many main-wspaces clock-date weather sysinfo &&
+  $HOME/.local/wm/eww/target/release/eww -c $HOME/.config/eww/bars/secondary open-many auxiliary-wspaces clock-date
 else
   # starting eww widgets (single screen)
-  $HOME/.local/eww/target/release/eww -c $HOME/.config/eww/bars/main open-many main-wspaces clock-date weather sysinfo
+  $HOME/.local/wm/eww/target/release/eww -c $HOME/.config/eww/bars/main open-many main-wspaces clock-date weather sysinfo
 fi

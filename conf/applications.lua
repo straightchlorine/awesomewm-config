@@ -1,5 +1,5 @@
 -- terminal prefix
-local emulator_exec = "alacritty -e fish -C "
+local emulator_exec = "alacritty -e fish -C"
 local terminal_exec = "alacritty -e fish"
 
 -- default applications
