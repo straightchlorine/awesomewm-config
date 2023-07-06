@@ -3,6 +3,7 @@
 -- https://github.com/straightchlorine
 --
 
+-- imports
 pcall(require, "luarocks.loader")
 local gears = require("gears")
 local beautiful = require("beautiful")
